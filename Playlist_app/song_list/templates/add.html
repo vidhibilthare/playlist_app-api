@@ -1,0 +1,17 @@
+<html>
+   {% load static %}
+    <head>
+<title>Audible Source</title>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+    <body>
+        <form action="/add_song/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="songname" placeholder="song name"/><br><br>
+            <input type="file" name="songimage"/><br><br>
+            <input type="file" name="songaudio"/><br><br>
+            <input type="text" name="singer" placeholder="singer name"/><br><br>
+            <input type="text" name="songmoviename" placeholder="movie name"/><br><br>
+            <input type="submit" value="add song" />
+        </form>
+    </body>
+</html>
